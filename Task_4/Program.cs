@@ -18,7 +18,10 @@ namespace Task_4
 
         public void Dispose()
         {
-            code = new int[0];
+            if (code != null)
+            {
+                code = null;
+            }
         }
 
     }
@@ -44,7 +47,6 @@ namespace Task_4
 
             }
 
-            Console.WriteLine(user.code.Length);
             Console.ReadKey();
 
         }
