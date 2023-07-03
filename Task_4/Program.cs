@@ -30,8 +30,20 @@ namespace Task_4
 
             User user = new User();
 
-            Console.WriteLine(user.code.Length);
-            user.Dispose();
+            try
+            {
+                Console.WriteLine(user.code.Length);
+
+            }
+            finally
+            {
+                if (user is IDisposable && user != null)
+                {
+                    user.Dispose();
+                }
+
+            }
+
             Console.WriteLine(user.code.Length);
             Console.ReadKey();
 
